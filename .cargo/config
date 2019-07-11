@@ -1,7 +1,7 @@
 [build]
-target = "xtensa-none-elf"
+target = "xtensa-esp32-none-elf"
 
-[target.xtensa-none-elf]
+[target.xtensa-esp32-none-elf]
 rustflags = [
   "-C", "target-cpu=esp32",
   "-C", "save-temps",
@@ -26,7 +26,7 @@ rustflags = [
 
   "-C", "link-arg=-Lesp-idf/components/esp32/ld",
   "-C", "link-arg=-Tesp32_out.ld",
-  "-C", "link-arg=-Tbuild/esp32/esp32.project.ld",
+  "-C", "link-arg=-Tbuild/esp32/esp32.common.ld",
   "-C", "link-arg=-Tesp32.rom.ld",
   "-C", "link-arg=-Tesp32.peripherals.ld",
   "-C", "link-arg=-Tesp32.rom.libgcc.ld",
